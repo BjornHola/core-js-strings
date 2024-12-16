@@ -46,7 +46,7 @@ console.log(getType(new String('test')) === 'string');
 
 
 
- * Returns true if the value is a string, otherwise returns false.
+ /* Returns true if the value is a string, otherwise returns false.
  *
  * @param {string} value - The value to check if it's a string.
  * @return {boolean} - True if the value is a string, false otherwise.
@@ -59,10 +59,16 @@ console.log(getType(new String('test')) === 'string');
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
-}
+/*function isString(/* value */) {
+//  throw new Error('Not implemented');
+//}
 
+function concatenateStrings(value1, value2){
+  return value1 + value2;
+}
+console.log(concatenateStrings('aa', 'bb'));
+console.log(concatenateStrings('aa', ''));
+console.log(concatenateStrings('', 'bb'));
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -78,6 +84,13 @@ function isString(/* value */) {
 function concatenateStrings(/* value1, value2 */) {
   throw new Error('Not implemented');
 }
+
+function getFirstChar(string){
+  return string.charAt(0);
+}
+console.log(getFirstChar('John Doe'));
+console.log(getFirstChar('cat'));
+console.log(getFirstChar(''));
 
 /**
  * Returns the first character of the given string.
