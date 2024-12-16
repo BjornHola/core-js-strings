@@ -5,9 +5,20 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-/**
- * Returns the length of the given string.
- *
+ function getLenghtString(str) {
+  if (str === undefined || str === null) {
+     return 0;
+    }
+  return str.length;
+ }
+console.log(getLenghtString('aaaa'));
+console.log(getLenghtString('b'));
+console.log(getLenghtString(''));
+console.log(getLenghtString());
+console.log(getLenghtString(null));
+console.log(getLenghtString(undefined));
+
+ /** Returns the length of the given string.
  * @param {string} value - The input string to calculate the length of.
  * @return {number} - The length of the string.
  *
@@ -19,11 +30,22 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
-}
+/*function getStringLength(/* value */
+  //throw new Error('Not implemented');
+//}
 
-/**
+function getType(input){
+  return typeof(input);
+}
+console.log(getType(null) === 'string');
+console.log(getType() === 'string');
+console.log(getType([]) === 'string');
+console.log(getType({}) === 'string');
+console.log(getType('test') === 'string');
+console.log(getType(new String('test')) === 'string');
+
+
+
  * Returns true if the value is a string, otherwise returns false.
  *
  * @param {string} value - The value to check if it's a string.
