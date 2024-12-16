@@ -118,10 +118,12 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(str) {
+  return str.trim();
 }
-
+console.log(removeLeadingAndTrailingWhitespaces('  Abracadabra'));
+console.log(removeLeadingAndTrailingWhitespaces('cat '));
+console.log(removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! '));
 /**
  * Removes only leading whitespace characters from the string.
  *
@@ -133,10 +135,12 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(str) {
+  return str.trimStart();
 }
-
+console.log(removeLeadingWhitespaces('  Abracadabra'));
+console.log(removeLeadingWhitespaces('cat '));
+console.log(removeLeadingWhitespaces('\t\t\tHello, World! '));
 /**
  * Removes only trailing whitespace characters from the string.
  *
@@ -148,9 +152,13 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(str) {
+  return str.trimEnd();
 }
+console.log(removeTrailingWhitespaces('  Abracadabra'));
+console.log(removeTrailingWhitespaces('cat '));
+console.log(removeTrailingWhitespaces('\t\t\tHello, World! '));
+
 
 /**
  * Returns a string that is repeated the specified number of times.
