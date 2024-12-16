@@ -173,10 +173,16 @@ console.log(removeTrailingWhitespaces('\t\t\tHello, World! '));
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  if (times < 0){
+    return '';
+  }
+  return str.repeat(times);
 }
-
+console.log(repeatString('A', 3));
+console.log(repeatString('cat', 3));
+console.log(repeatString('', 3));
+console.log(repeatString('abc', -2));
 /**
  * Remove the first occurrence of a substring from a string.
  *
