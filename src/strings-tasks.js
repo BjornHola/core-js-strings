@@ -342,9 +342,12 @@ function reverseString(/* str */) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  return str.split('').sort().join('');
 }
+console.log(orderAlphabetically('webmaster'));
+console.log(orderAlphabetically('textbook'));
+console.log(orderAlphabetically('abc123xyz'));
 
 /**
  * Checks if a given string contains a specified substring.
@@ -358,9 +361,12 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
+console.log(containsSubstring('Hello, World!', 'World'));
+console.log(containsSubstring('JavaScript is Fun', 'Python'));
+console.log(containsSubstring('12345', '34'));
 
 /**
  * Returns the number of vowels in the string.
