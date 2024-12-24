@@ -285,9 +285,14 @@ console.log(startsWith('Hello World', 'Hello'));
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+
+function endsWith(str, substr) {
+  if (!str || !substr)
+    return false;
+  return str.endsWith(substr);
 }
+console.log(endsWith('Hello World', 'World'));
+console.log(endsWith('Hello World', 'Hello'));
 
 /**
  * Returns a time string in the "mm:ss" format.
@@ -302,9 +307,15 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+ let minutesToStr = String(minutes).padStart(2, '0');
+ let secondsToStr = String(seconds).padStart(2, '0')
+  return `${minutesToStr}:${secondsToStr}`;
 }
+console.log(formatTime(5, 30));
+console.log(formatTime(1, 15));
+console.log(formatTime(0, 45));
+console.log(formatTime(0, 0));
 
 /**
  * Returns a string in reverse order.
