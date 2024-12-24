@@ -195,9 +195,16 @@ console.log(repeatString('abc', -2));
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(string, subStr) {
+  let index = string.indexOf(subStr);
+  if (index === -1){
+    return string;
+  };
+  return string.slice(0, index) + string.slice(index + subStr.length);
 }
+console.log(removeFirstOccurrences('To be or not to be', 'be'));
+console.log(removeFirstOccurrences('I like legends', 'end'));
+console.log(removeFirstOccurrences('ABABAB', 'BA'));
 
 /**
  * Remove the last occurrence of a substring from a string.
@@ -211,9 +218,16 @@ function removeFirstOccurrences(/* str, value */) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(string, substring) {
+  const index = string.lastIndexOf(substring);
+  if (index === -1){
+    return string;
+  }
+  return string.slice(0, index) + string.slice(index + substring.length)
 }
+console.log(removeLastOccurrences('To be or not to be', 'be'));
+console.log(removeLastOccurrences('I like legends', 'end'));
+console.log(removeLastOccurrences('ABABAB', 'BA'));
 
 /**
  * Calculate the sum of character codes of the given string.
@@ -227,9 +241,20 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
-}
+function sumOfCodes(string) {
+  let sum = 0;
+  if (!string)
+    return 0;
+  for (let index = 0; index < string.lenght; index ++){
+string.charCodeAt(index);
+sum += string.charCodeAt(index);
+  }
+    return sum;
+    }
+console.log(sumOfCodes('My String'));
+console.log(sumOfCodes('12345'));
+console.log(sumOfCodes(''));
+console.log(sumOfCodes());
 
 /**
  * Checks if a string starts with a specific substring.
@@ -242,10 +267,13 @@ function sumOfCodes(/* str */) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr){
+if (!str || !substr)
+  return false;
+return str.indexOf(substr) === 0;
 }
-
+console.log(startsWith('Hello World', 'World'));
+console.log(startsWith('Hello World', 'Hello'));
 /**
  * Checks if a string ends with a specific substring.
  *
