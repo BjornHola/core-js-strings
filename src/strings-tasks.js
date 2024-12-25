@@ -488,9 +488,11 @@ console.log(invertCase('12345'));
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `${firstName} ${lastName}`;
 }
+console.log(`Hello, ${getStringFromTemplate('John', 'Doe')}!`);
+console.log(`Hello, ${getStringFromTemplate('Chuck', 'Norris')}!`);
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -502,9 +504,11 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  return value.replace(/Hello, (.*)!/, '$1');
 }
+console.log(extractNameFromTemplate('Hello, John Doe!'));
+console.log(extractNameFromTemplate('Hello, Chuck Norris!'));
 
 /**
  * Remove the first and last angle brackets from tag string
