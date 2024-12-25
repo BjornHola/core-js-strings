@@ -521,9 +521,12 @@ console.log(extractNameFromTemplate('Hello, Chuck Norris!'));
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.slice(0,-1);
 }
+console.log(unbracketTag('<div>'));
+console.log(unbracketTag('<span>'));
+console.log(unbracketTag('<a>'));
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
@@ -540,10 +543,10 @@ function unbracketTag(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
-
+console.log(extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'));
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
