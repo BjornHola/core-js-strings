@@ -445,9 +445,11 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
 }
+console.log(reverseWords('Hello World'));
+console.log(reverseWords('The Quick Brown Fox'));
 
 /**
  * Inverts the case of each character in the given string.
@@ -460,9 +462,18 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  return str.split('').map(char => {
+    if (char === char.toUpperCase()) {
+      return char.toLowerCase();
+    } else {
+      return char.toUpperCase();
+    }
+  }).join('');
 }
+console.log(invertCase('Hello, World!'));
+console.log(invertCase('JavaScript is Fun'));
+console.log(invertCase('12345'));
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
