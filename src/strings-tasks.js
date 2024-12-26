@@ -549,7 +549,7 @@ function extractEmails(str) {
 console.log(extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'));
 /**
  * Encode specified string with ROT13 cipher
- * See details:  https://en.wikipedia.org/wiki/ROT13
+ * See details:
  *
  * @param {string} str - The input string.
  * @return {string} - The ROT13 encoded string.
@@ -563,9 +563,19 @@ console.log(extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.s
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const encodedAlphabet = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return str.split('').map(char => {
+    const index = alphabet.indexOf(char);
+    if (index !== -1) return encodedAlphabet[index];
+    else return char;
+  }
 }
+    console.log(rot13('hello'));
+    console.log(rot13('Why did the chicken cross the road?'));
+    console.log(rot13('Gb trg gb gur bgure fvqr!'));
+    console.log(rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'));
 
 /**
  * Returns playid card id.
@@ -591,9 +601,18 @@ function encodeToRot13(/* str */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const deck = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+   'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+   'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+   'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+   return deck.indexOf(value);
 }
+console.log(getCardId('K♠'));
+console.log(getCardId('A♣'));
+console.log(getCardId('2♣'));
+console.log(getCardId('3♣'));
+console.log(getCardId('Q♠'));
 
 module.exports = {
   getStringLength,
