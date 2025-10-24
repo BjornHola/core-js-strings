@@ -119,9 +119,12 @@ removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ');
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  return value.trimStart();
 }
+removeLeadingWhitespaces('  Abracadabra');
+removeLeadingWhitespaces('cat ');
+removeLeadingWhitespaces('\t\t\tHello, World! ');
 
 /**
  * Removes only trailing whitespace characters from the string.
@@ -134,9 +137,12 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  return value.trimEnd();
 }
+removeTrailingWhitespaces('  Abracadabra');
+removeTrailingWhitespaces('cat ');
+removeTrailingWhitespaces('\t\t\tHello, World! ');
 
 /**
  * Returns a string that is repeated the specified number of times.
