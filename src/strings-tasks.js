@@ -157,9 +157,16 @@ removeTrailingWhitespaces('\t\t\tHello, World! ');
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  if (typeof times === 'number' && times >= 0 && times < +Infinity) {
+    return str.repeat(times);
+  }
+  return '';
 }
+repeatString('A', 5);
+repeatString('cat', 3);
+repeatString('', 3);
+repeatString('abc', -2);
 
 /**
  * Remove the first occurrence of a substring from a string.
@@ -173,9 +180,15 @@ function repeatString(/* str, times */) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const index = str.indexOf(value);
+  if (index === -1) return str;
+  const parts = str.substring(0, index) + str.substring(index + value.length);
+  return parts;
 }
+removeFirstOccurrences('To be or not to be', 'be');
+removeFirstOccurrences('I like legends', 'end');
+removeFirstOccurrences('ABABAB', 'BA');
 
 /**
  * Remove the last occurrence of a substring from a string.
@@ -189,10 +202,16 @@ function removeFirstOccurrences(/* str, value */) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  const index = str.lastIndexOf(value);
+  if (index === -1) {
+    return str;
+  }
+  return str.slice(0, index) + str.slice(index + value.length);
 }
-
+removeLastOccurrences('To be or not to be', 'be');
+removeLastOccurrences('I like legends', 'end');
+removeLastOccurrences('ABABAB', 'BA');
 /**
  * Calculate the sum of character codes of the given string.
  *
