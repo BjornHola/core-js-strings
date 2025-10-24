@@ -68,10 +68,12 @@ isString('test');
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1.concat(value2);
 }
-
+concatenateStrings('aa', 'bb');
+concatenateStrings('aa', '');
+concatenateStrings('', 'bb');
 /**
  * Returns the first character of the given string.
  *
@@ -83,10 +85,12 @@ function concatenateStrings(/* value1, value2 */) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value.charAt(0);
 }
-
+getFirstChar('John Doe');
+getFirstChar('cat');
+getFirstChar('');
 /**
  * Removes leading and trailing whitespace characters from the string.
  *
@@ -98,10 +102,12 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
-
+removeLeadingAndTrailingWhitespaces('  Abracadabra');
+removeLeadingAndTrailingWhitespaces('cat ');
+removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ');
 /**
  * Removes only leading whitespace characters from the string.
  *
