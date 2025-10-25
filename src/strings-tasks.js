@@ -355,10 +355,16 @@ containsSubstring('12345', '34');
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const template = /[aeiouy]/gi;
+  const matches = str.match(template);
+  return matches ? matches.length : 0;
 }
-
+countVowels('apple');
+countVowels('banana');
+countVowels('cherry');
+countVowels('aEiOu');
+countVowels('XYZ');
 /**
  * Returns true if the string is a palindrome; otherwise false.
  * https://en.wikipedia.org/wiki/Palindrome
@@ -372,10 +378,15 @@ function countVowels(/* str */) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reversed = cleaned.split('').reverse().join('');
+  return cleaned === reversed;
 }
-
+isPalindrome('madam');
+isPalindrome('racecar');
+isPalindrome('apple');
+isPalindrome('No lemon, no melon');
 /**
  * Find the longest word in the sentence. If there are multiple longest words,
  * the function returns the first one encountered.
