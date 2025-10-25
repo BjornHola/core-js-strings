@@ -224,10 +224,18 @@ removeLastOccurrences('ABABAB', 'BA');
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  if (!str) return 0;
+  let sum = 0;
+  for (let i = 0; i <= str.length - 1; i += 1) {
+    sum += str.charCodeAt(i);
+  }
+  return sum;
 }
-
+sumOfCodes('My String');
+sumOfCodes('12345');
+sumOfCodes('');
+sumOfCodes();
 /**
  * Checks if a string starts with a specific substring.
  *
@@ -239,10 +247,11 @@ function sumOfCodes(/* str */) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr) {
+  return str.startsWith(substr, 0);
 }
-
+startsWith('Hello World', 'World');
+startsWith('Hello World', 'Hello');
 /**
  * Checks if a string ends with a specific substring.
  *
@@ -254,10 +263,11 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  return str.endsWith(substr);
 }
-
+endsWith('Hello World', 'World');
+endsWith('Hello World', 'Hello');
 /**
  * Returns a time string in the "mm:ss" format.
  *
@@ -271,10 +281,16 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  if (minutes < 0 || seconds < 0) return 'Impossible return!';
+  const minuteStr = minutes.toString().padStart(2, '0');
+  const secondStr = seconds.toString().padStart(2, '0');
+  return `${minuteStr}:${secondStr}`;
 }
-
+formatTime(5, 30);
+formatTime(1, 15);
+formatTime(0, 45);
+formatTime(0, 0);
 /**
  * Returns a string in reverse order.
  *
