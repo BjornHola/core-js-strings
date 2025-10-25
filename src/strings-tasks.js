@@ -399,10 +399,15 @@ isPalindrome('No lemon, no melon');
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  return sentence
+    .split(' ')
+    .sort((a, b) => b.length - a.length)
+    .at(0);
 }
-
+findLongestWord('The quick brown fox');
+findLongestWord('A long and winding road');
+findLongestWord('No words here');
 /**
  * Returns the string where each word is reversed.
  *
@@ -413,10 +418,14 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  return str
+    .split(' ')
+    .map((word) => word.split('').reverse().join(''))
+    .join(' ');
 }
-
+reverseWords('Hello World');
+reverseWords('The Quick Brown Fox');
 /**
  * Inverts the case of each character in the given string.
  *
@@ -428,10 +437,19 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  return str
+    .split('')
+    .map((letter) =>
+      letter === letter.toUpperCase()
+        ? letter.toLowerCase()
+        : letter.toUpperCase()
+    )
+    .join('');
 }
-
+invertCase('Hello, World!');
+invertCase('JavaScript is Fun');
+invertCase('12345');
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
