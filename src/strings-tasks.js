@@ -301,10 +301,11 @@ formatTime(0, 0);
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
-
+reverseString('abcdef');
+reverseString('12345');
 /**
  * Returns a string with characters in alphabetical order.
  *
