@@ -463,10 +463,10 @@ invertCase('12345');
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
-
+getStringFromTemplate('John', 'Doe');
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
@@ -477,10 +477,10 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  return value.substring(7, value.length - 1);
 }
-
+extractNameFromTemplate('Hello, John Doe!');
 /**
  * Remove the first and last angle brackets from tag string
  *
@@ -492,9 +492,13 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str
+    .split('')
+    .filter((symbol) => symbol !== '<' && symbol !== '>')
+    .join('');
 }
+unbracketTag('<div>');
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
